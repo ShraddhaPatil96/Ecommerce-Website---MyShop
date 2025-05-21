@@ -2,7 +2,9 @@
 Ecommerce Website - Myshop
 
 🛍️ Project: MyShop – E-commerce Website
-Tech Used:  HTML, CSS, JavaScript
+
+Tech Used: 
+HTML, CSS, JavaScript
 
 Description:
 MyShop is a e-commerce website where users can browse products, add items to their cart, and place orders using a secure checkout process. 

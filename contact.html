@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - MyShop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 style="font-family: cursive; color: rgb(178, 178, 207); text-align: start; padding-right: 120px;">MyShop</h1>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="contact-heading">Contact</h1>
+    <!-- <p>Content coming soon...</p> -->
+    <form id="contactForm">
+      <label>Name:</label>
+      <input type="text" id="name" name="name">
+      <div class="error" id="nameError"></div>
+    
+      <label>Email:</label>
+      <input type="email" id="email" name="email">
+      <div class="error" id="emailError"></div>
+    
+      <label>Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <div class="error" id="messageError"></div>
+    
+      <button type="submit">Submit</button>
+    </form>
+    
+  </main>
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    // Clear previous errors
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("messageError").textContent = "";
+
+    // Get input values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    let hasError = false;
+
+    // Validate Name
+    if (name === "") {
+      document.getElementById("nameError").textContent = "Name is required.";
+      hasError = true;
+    }
+
+    // Validate Email
+    if (email === "") {
+      document.getElementById("emailError").textContent = "Email is required.";
+      hasError = true;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      document.getElementById("emailError").textContent = "Invalid email format.";
+      hasError = true;
+    }
+
+    // Validate Message
+    if (message === "") {
+      document.getElementById("messageError").textContent = "Message is required.";
+      hasError = true;
+    }
+
+    // If no error, simulate form submission
+    if (!hasError) {
+      alert("Thank you for contacting us, " + name + "!");
+      document.getElementById("contactForm").reset();
+    }
+  });
+</script>
+
+
+  <footer>
+    <p>&copy; 2025 MyShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

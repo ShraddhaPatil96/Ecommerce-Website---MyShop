@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product-view - MyShop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 style="font-family: cursive; color: rgb(178, 178, 207); text-align: start; padding-right: 120px;">MyShop</h1>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+  <!-- Product View -->
+  <section class="product-view-section">
+    <div class="product-view-container">
+      <div class="product-image">
+        <img src="assets/shoes1.jpg" alt="Blue Shoes">
+      </div>
+      <div class="product-details">
+        <h2 id="productTitle">Blue Shoes</h2>
+        <p class="price" id="productPrice">$19.99</p>
+        <div class="rating">⭐⭐⭐⭐☆ (4.2/5)</div>
+        <p class="description">
+          Enjoy quality with our latest shoes brand.
+        </p>
+        <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <h3>Related Products</h3>
+    <div class="product-grid">
+      <div class="product">
+        <img src="assets/shoes1.jpg" alt="Blue shoes">
+        <h4>Blue Shoes</h4>
+        <p>$19.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+      <div class="product">
+        <img src="assets/shoes2.jpg" alt="Red Shoes">
+        <h4>Red Shoes</h4>
+        <p>$20.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function addToCart() {
+      const title = document.getElementById('productTitle').textContent;
+      const price = document.getElementById('productPrice').textContent.replace('$', '');
+      const product = {
+        title: title,
+        price: parseFloat(price),
+        quantity: 1
+      };
+
+      // Get existing cart or create new one
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if product already exists in cart
+      const index = cart.findIndex(item => item.title === product.title);
+      if (index > -1) {
+        cart[index].quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${title} added to cart!`);
+    }
+  </script>
+  
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

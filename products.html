@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products - MyShop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    
+     <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h1 style="font-family: cursive; color: rgb(178, 178, 207); text-align: start; padding-right: 120px;">MyShop</h1>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <h2>Filter Products</h2>
+    <div class="filters">
+      <div class="filter-category">
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="">Tops</option>
+          <option value="fashion">Jeans</option>
+          <option value="home">Partywears</option>
+        </select>
+      </div>
+      <div class="filter-price">
+        <label for="priceRange">Max Price:</label>
+        <input type="range" id="priceRange" min="10" max="1000" value="500">
+        <span id="priceValue">$500</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products List -->
+  <section class="product-listing">
+    <h3>All Products</h3>
+    <div class="product-grid">
+      <div class="product">
+        <img src="assets/jeans1.jpg" alt="jeans1 ">
+        <h4>Jeans</h4>
+        <p>$12.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+      <div class="product">
+        <img src="assets/top2.jpg" alt="Top2">
+        <h4>Tops</h4>
+        <p>$13.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+      <div class="product">
+        <img src="assets/partywear2.jpg" alt="Dress2">
+        <h4>Gown</h4>
+        <p>$39.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+      <div class="product">
+        <img src="assets/shoes1.jpg" alt="Shoes1">
+        <h4>
+          Shoes
+        </h4>
+        <p>$19.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script>
+    // Show price range value dynamically
+    const priceRange = document.getElementById('priceRange');
+    const priceValue = document.getElementById('priceValue');
+    priceRange.addEventListener('input', () => {
+      priceValue.textContent = `$${priceRange.value}`;
+    });
+  </script>
+
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

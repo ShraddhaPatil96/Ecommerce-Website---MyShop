@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - MyShop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 style="font-family: cursive; color: rgb(178, 178, 207); text-align: start; padding-right: 120px;">MyShop</h1>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+   <!-- Checkout Section -->
+  <section class="checkout-section">
+    <h2>Checkout</h2>
+    <div class="checkout-container">
+
+      <!-- Shipping Info -->
+      <div class="shipping-info">
+        <h3>Shipping Information</h3>
+        <form id="checkoutForm">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required>
+
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" required></textarea>
+
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required>
+
+          <label for="zip">ZIP Code:</label>
+          <input type="text" id="zip" name="zip" required>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <ul>
+          <li>Blue Shoes - $19.99</li>
+          <li>Black Top - $11.99</li>
+        </ul>
+        <p><strong>Total:</strong> $31.98</p>
+
+        <a href="confirmation.html" class="place-order-btn">Place Order</a>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search - MyShop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 style="font-family: cursive; color: rgb(178, 178, 207); text-align: start; padding-right: 120px;">MyShop</h1>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <h2>Search Products</h2>
+    <input type="text" id="searchInput" placeholder="Type product name..." onkeyup="searchProducts()">
+    
+    <div class="product-grid" id="searchResults">
+      <!-- Products will be filtered here -->
+      <div class="product" data-name="Jeans">
+        <img src="assets/jeans2.jpg" alt="Jeans 2">
+        <h4>Jeans</h4>
+        <p>$21.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+
+      <div class="product" data-name="Partywears">
+        <img src="assets/partywear2.jpg" alt="partywear2">
+        <h4>Red Long Dress</h4>
+        <p>$29.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+
+      <div class="product" data-name="Shoes">
+        <img src="assets/shoes2.jpg" alt="Women Shoes">
+        <h4>Red Shoes</h4>
+        <p>$29.99</p>
+        <a href="product-view.html">View Product</a>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- Search Script -->
+  <script>
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const products = document.querySelectorAll('#searchResults .product');
+
+      products.forEach(product => {
+        const name = product.getAttribute('data-name').toLowerCase();
+        if (name.includes(input)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
